@@ -1,7 +1,7 @@
-# BloX Bag Recorder
+# BloX MOCAP4ROS2-Optitrack
 
-The BloX Bag Recorder enables triggering the recording of ROS bags via service call.
+The BloX MOCAP4ROS2-Optitrack streams motion tracking data from an Optitrack System. It is based on the (MOCAP4ROS)[https://github.com/MOCAP4ROS2-Project] project.
 
 ## Data
 
-The BloX Bag Recorder records all available topics and messages by default.
+...
