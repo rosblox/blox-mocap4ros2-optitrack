@@ -27,4 +27,6 @@ services:
     image: ghcr.io/rosblox/ros-mocap4ros2-optitrack:humble
     restart: always
     network_mode: "host"
+    volumes:
+      - ./config/mocap_optitrack_driver_params.yaml:/colcon_ws/src/mocap4ros2_optitrack/mocap_optitrack_driver/config/mocap_optitrack_driver_params.yaml
     command: ros2 launch mocap_optitrack_driver optitrack2.launch.py
