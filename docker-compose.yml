@@ -20,13 +20,14 @@ services:
     image: ghcr.io/rosblox/ros-rosbridge-suite:humble
     ports:
       - 9090:9090
+#    network_mode: "host"
     restart: always
     command: ros2 launch rosbridge_server rosbridge_websocket_launch.xml
 
   ros-mocap4ros2-optitrack:
     image: ghcr.io/rosblox/ros-mocap4ros2-optitrack:humble
     restart: always
-    network_mode: "host"
+    # network_mode: "host"
     volumes:
       - ./config/mocap_optitrack_driver_params.yaml:/colcon_ws/src/mocap4ros2_optitrack/mocap_optitrack_driver/config/mocap_optitrack_driver_params.yaml
     command: ros2 launch mocap_optitrack_driver optitrack2.launch.py
