@@ -32,6 +32,6 @@ services:
     network_mode: "host"
     ipc: host
     user: 1000:1000
-    tmpfs: /.ros
+    tmpfs: /.ros:mode=777,uid=1000,gid=1000
     #command: "ros2 topic pub /talkerD std_msgs/String 'data: asdf'"
     command: ros2 launch mocap_optitrack_driver optitrack2.launch.py
