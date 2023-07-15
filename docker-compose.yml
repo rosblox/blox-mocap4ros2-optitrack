@@ -1,28 +1,28 @@
 version: '3'
 
 services:
-  nginx:
-    image: nginx
-    volumes:
-      - ./nginx/default.conf:/etc/nginx/conf.d/default.conf
-    network_mode: "host"
-    restart: always
+#   nginx:
+#     image: nginx
+#     volumes:
+#       - ./nginx/default.conf:/etc/nginx/conf.d/default.conf
+#     network_mode: "host"
+#     restart: always
 
-  rosblox-studio:
-    image: ghcr.io/rosblox/studio:latest
-    volumes:
-      - ./studio/layout.json:/src/layout.json
-    ports:
-      - 8080:8080
-    restart: always
+#   rosblox-studio:
+#     image: ghcr.io/rosblox/studio:latest
+#     volumes:
+#       - ./studio/layout.json:/src/layout.json
+#     ports:
+#       - 8080:8080
+#     restart: always
 
-  ros-rosbridge-suite:
-    image: ghcr.io/rosblox/ros-rosbridge-suite:humble
-    ports:
-      - 9090:9090
-#    network_mode: "host"
-    restart: always
-    command: ros2 launch rosbridge_server rosbridge_websocket_launch.xml
+#   ros-rosbridge-suite:
+#     image: ghcr.io/rosblox/ros-rosbridge-suite:humble
+#     ports:
+#       - 9090:9090
+# #    network_mode: "host"
+#     restart: always
+#     command: ros2 launch rosbridge_server rosbridge_websocket_launch.xml
 
   ros-mocap4ros2-optitrack:
     image: ghcr.io/rosblox/ros-mocap4ros2-optitrack:humble
@@ -31,7 +31,9 @@ services:
       - ./config/mocap_optitrack_driver_params.yaml:/colcon_ws/src/mocap4ros2_optitrack/mocap_optitrack_driver/config/mocap_optitrack_driver_params.yaml
     network_mode: "host"
     ipc: host
-    user: 1000:1000
-    tmpfs: /.ros:mode=777,uid=1000,gid=1000
-    #command: "ros2 topic pub /talkerD std_msgs/String 'data: asdf'"
-    command: ros2 launch mocap_optitrack_driver optitrack2.launch.py
+    pid: host
+    environment: 
+      - UID=1000
+      - GID=1000
+    command: "su - ros /run.sh"
+    # command: ros2 launch mocap_optitrack_driver optitrack2.launch.py
