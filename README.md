@@ -4,7 +4,7 @@ The BloX MOCAP4ROS2-Optitrack streams motion tracking data from an Optitrack Sys
 
 ## Data
 
-Markers: mocap_msgs/msg/Markers
+Markers: mocap_msgs/msg/Markers  
 RigidBodies: mocap_msgs/msg/RigidBodies
 
 ## Visualization
