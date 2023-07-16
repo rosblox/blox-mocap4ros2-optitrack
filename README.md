@@ -1,6 +1,6 @@
 # BloX MOCAP4ROS2-Optitrack
 
-The BloX MOCAP4ROS2-Optitrack streams motion tracking data from an Optitrack System. It is based on the [MOCAP4ROS](https://github.com/MOCAP4ROS2-Project) project. The ROSbloX runs our forks of the original projects: [](https://github.com/rosblox/ros-mocap4ros2-optitrack)
+The BloX MOCAP4ROS2-Optitrack streams motion tracking data from an Optitrack System. It is based on the [MOCAP4ROS](https://github.com/MOCAP4ROS2-Project) project. The ROSbloX runs our forks of the original projects: (https://github.com/rosblox/ros-mocap4ros2-optitrack)
 
 ## Data
 
