@@ -4,6 +4,8 @@ The BloX MOCAP4ROS2-Optitrack streams motion tracking data from an Optitrack Sys
 
 ## Data
 
+Data stream at Optitrack's capture rate, typically 120Hz.
+
 Markers: mocap_msgs/msg/Markers  
 RigidBodies: mocap_msgs/msg/RigidBodies
 
